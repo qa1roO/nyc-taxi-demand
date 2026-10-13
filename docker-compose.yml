@@ -1,0 +1,30 @@
+services:
+  app:
+    build: .
+    volumes:
+      - ./:/app
+    ports:
+      - "8888:8888"   # JupyterLab
+      - "4040:4040"   # Spark UI while a job is running
+      - "5000:5000"   # MLflow UI
+    environment:
+      POSTGRES_URL: jdbc:postgresql://postgres:5432/taxi
+      POSTGRES_USER: taxi
+      POSTGRES_PASSWORD: taxi
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: taxi
+      POSTGRES_USER: taxi
+      POSTGRES_PASSWORD: taxi
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql:/sql:ro   # SQL scripts, run with psql inside this container
+
+volumes:
+  pgdata:

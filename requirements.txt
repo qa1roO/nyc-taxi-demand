@@ -1,0 +1,8 @@
+pyspark==3.5.3
+pyarrow==17.0.0
+pandas==2.2.3
+requests==2.32.3
+jupyterlab==4.2.5
+lightgbm==4.6.0
+mlflow==3.17.0
+psycopg[binary]==3.2.10

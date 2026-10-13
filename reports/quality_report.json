@@ -1,0 +1,16 @@
+{
+  "period": "2024-01..2024-06",
+  "raw_rows": 20332093,
+  "caught_by_rule": {
+    "pickup_outside_period": 39,
+    "non_positive_duration": 6177,
+    "duration_over_6h": 11349,
+    "unknown_pickup_zone": 76985,
+    "negative_fare_reversal": 315747
+  },
+  "exact_duplicates": 1,
+  "dropped_rows": 408257,
+  "dropped_share": 0.02008,
+  "clean_rows": 19923836,
+  "kept_flex_fare_rows": 1913181
+}

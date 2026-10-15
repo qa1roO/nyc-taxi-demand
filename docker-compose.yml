@@ -11,6 +11,7 @@ services:
       POSTGRES_URL: jdbc:postgresql://postgres:5432/taxi
       POSTGRES_USER: taxi
       POSTGRES_PASSWORD: taxi
+      GIT_PYTHON_REFRESH: quiet   # no git inside the container, silence MLflow's warning
     depends_on:
       - postgres
 
